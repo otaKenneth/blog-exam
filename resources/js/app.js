@@ -41,7 +41,7 @@ const app = new Vue({
     vuetify: new Vuetify(),
     data () {
         return {
-            search: '', records: [], posts: [],
+            filter: 'author', search: '', records: [], posts: [],
         }
     },
     watch: {
@@ -52,7 +52,14 @@ const app = new Vue({
                 var title = data.title.toLowerCase();
                 var d = data.description.toLowerCase();
                 var uname = data.user.username.toLowerCase();
-                return (title.match(s) || d.match(s) || uname.match(s));
+
+                if (this.filter == 'author') {
+                    return uname.match(s);
+                } else if (this.filter == 'title') {
+                    return title.match(s);
+                } else if (this.filter == 'description') {
+                    return d.match(s);
+                }
             });
         }
     }

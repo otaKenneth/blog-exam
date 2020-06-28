@@ -2011,6 +2011,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['isguest', 'posts'],
   data: function data() {
@@ -2094,6 +2129,15 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -38439,8 +38483,8 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm.posts.length > 0
+  return _c("section", [
+    _vm.$root.search !== ""
       ? _c(
           "div",
           _vm._l(_vm.$root.posts, function(post) {
@@ -38474,12 +38518,10 @@ var render = function() {
                             _c(
                               "div",
                               {
-                                staticClass: "rounded-circle",
                                 staticStyle: {
                                   "max-width": "30px",
                                   height: "30px",
-                                  overflow: "hidden",
-                                  border: "solid 1px"
+                                  overflow: "hidden"
                                 }
                               },
                               [
@@ -38520,6 +38562,12 @@ var render = function() {
                                       ]
                                     )
                               ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "w-100 py-1 text-right" },
+                              [_vm._v(_vm._s(post.created_at))]
                             )
                           ])
                         ]
@@ -38539,7 +38587,77 @@ var render = function() {
           0
         )
       : _c("div", [
-          _c("div", { staticClass: "row justify-content-center" }, [
+          _c(
+            "div",
+            {
+              staticClass: "col-6",
+              staticStyle: { height: "70vh", margin: "auto" }
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "carousel slide",
+                  staticStyle: { height: "100%" },
+                  attrs: {
+                    id: "carouselExampleIndicators",
+                    "data-ride": "carousel"
+                  }
+                },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "carousel-inner",
+                      staticStyle: { height: "100%" }
+                    },
+                    _vm._l(_vm.posts.slice(0, 3), function(post, key) {
+                      return _c(
+                        "div",
+                        {
+                          key: post.id,
+                          staticClass: "carousel-item bg-dark",
+                          class: key == 0 ? "active" : "",
+                          staticStyle: { height: "100%" }
+                        },
+                        [
+                          _c("img", {
+                            staticClass: "d-block",
+                            staticStyle: { height: "100%", margin: "auto" },
+                            attrs: {
+                              src: "/storage/" + post.image,
+                              alt: "First slide"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "carousel-caption d-none d-md-block"
+                            },
+                            [
+                              _c("h5", [_vm._v(_vm._s(post.title))]),
+                              _vm._v(" "),
+                              _c("p", [_vm._v(_vm._s(post.description))])
+                            ]
+                          )
+                        ]
+                      )
+                    }),
+                    0
+                  ),
+                  _vm._v(" "),
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _vm._m(2)
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "row justify-content-center my-4" }, [
             _vm.isguest
               ? _c("h1", [
                   _c("b", [_vm._v("Create")]),
@@ -38551,11 +38669,119 @@ var render = function() {
                   _c("b", [_vm._v("Add")]),
                   _vm._v(" a blog post now!")
                 ])
-          ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.posts.slice(2, 6), function(post, key) {
+              return _c(
+                "div",
+                {
+                  key: key,
+                  staticClass: "ml-3",
+                  staticStyle: { width: "300px" }
+                },
+                [
+                  _c("img", {
+                    staticClass: "w-100",
+                    staticStyle: { height: "100%" },
+                    attrs: { src: "/storage/" + post.image, alt: "Image" }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "d-block text-center mt-2" }, [
+                    _c("h5", { staticStyle: { "font-weight": "bold" } }, [
+                      _vm._v(_vm._s(post.title))
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(post.description.substring(0, 20)))])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
         ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ol", { staticClass: "carousel-indicators" }, [
+      _c("li", {
+        staticClass: "active",
+        attrs: {
+          "data-target": "#carouselExampleIndicators",
+          "data-slide-to": "0"
+        }
+      }),
+      _vm._v(" "),
+      _c("li", {
+        attrs: {
+          "data-target": "#carouselExampleIndicators",
+          "data-slide-to": "1"
+        }
+      }),
+      _vm._v(" "),
+      _c("li", {
+        attrs: {
+          "data-target": "#carouselExampleIndicators",
+          "data-slide-to": "2"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "carousel-control-prev",
+        attrs: {
+          href: "#carouselExampleIndicators",
+          role: "button",
+          "data-slide": "prev"
+        }
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-prev-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "carousel-control-next",
+        attrs: {
+          href: "#carouselExampleIndicators",
+          role: "button",
+          "data-slide": "next"
+        }
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-next-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -38707,34 +38933,80 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("input", {
-    directives: [
-      {
-        name: "model",
-        rawName: "v-model",
-        value: _vm.$root.search,
-        expression: "$root.search"
-      }
-    ],
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      name: "search",
-      id: "search",
-      placeholder: "Search",
-      autofocus: "",
-      autocomplete: "off"
-    },
-    domProps: { value: _vm.$root.search },
-    on: {
-      input: function($event) {
-        if ($event.target.composing) {
-          return
+  return _c("div", { staticClass: "d-flex" }, [
+    _c("div", { staticClass: "form-group m-0 mr-3" }, [
+      _c(
+        "select",
+        {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.$root.filter,
+              expression: "$root.filter"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { name: "", id: "str-filter" },
+          on: {
+            change: function($event) {
+              var $$selectedVal = Array.prototype.filter
+                .call($event.target.options, function(o) {
+                  return o.selected
+                })
+                .map(function(o) {
+                  var val = "_value" in o ? o._value : o.value
+                  return val
+                })
+              _vm.$set(
+                _vm.$root,
+                "filter",
+                $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+              )
+            }
+          }
+        },
+        [
+          _c("option", { attrs: { value: "author" } }, [_vm._v("Author")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "title" } }, [_vm._v("Title")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "description" } }, [
+            _vm._v("Description")
+          ])
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c("input", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.$root.search,
+          expression: "$root.search"
         }
-        _vm.$set(_vm.$root, "search", $event.target.value)
+      ],
+      staticClass: "form-control",
+      attrs: {
+        type: "text",
+        name: "search",
+        id: "search",
+        placeholder: "Search",
+        autofocus: "",
+        autocomplete: "off"
+      },
+      domProps: { value: _vm.$root.search },
+      on: {
+        input: function($event) {
+          if ($event.target.composing) {
+            return
+          }
+          _vm.$set(_vm.$root, "search", $event.target.value)
+        }
       }
-    }
-  })
+    })
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -94657,6 +94929,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   vuetify: new vuetify__WEBPACK_IMPORTED_MODULE_1___default.a(),
   data: function data() {
     return {
+      filter: 'author',
       search: '',
       records: [],
       posts: []
@@ -94664,13 +94937,22 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   },
   watch: {
     search: function search(val) {
+      var _this = this;
+
       console.log(val);
       this.posts = this.records.filter(function (data) {
         var s = val.toLowerCase();
         var title = data.title.toLowerCase();
         var d = data.description.toLowerCase();
         var uname = data.user.username.toLowerCase();
-        return title.match(s) || d.match(s) || uname.match(s);
+
+        if (_this.filter == 'author') {
+          return uname.match(s);
+        } else if (_this.filter == 'title') {
+          return title.match(s);
+        } else if (_this.filter == 'description') {
+          return d.match(s);
+        }
       });
     }
   }

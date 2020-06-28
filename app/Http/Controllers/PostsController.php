@@ -18,7 +18,7 @@ class PostsController extends Controller
         // $users[] = auth()->user()->id;
         // // dd($users);
         // $posts = Post::whereIn('user_id', $users)->latest()->get();
-        $posts = Post::all()->load('user.profile');
+        $posts = Post::select('*')->latest()->get()->load('user.profile');
         // dd($posts);
         return view('home', compact('posts'));
     }
