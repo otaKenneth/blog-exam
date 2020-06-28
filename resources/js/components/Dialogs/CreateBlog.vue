@@ -4,7 +4,7 @@
             <v-card>
                 <v-card-title class="justify-content-between bg-primary">
                     <h3 class="text-light">New Blog</h3>
-                    <button type="button" class="btn btn-light" style="font-weight: bold; color: red;" @click="dialog = false">X</button>
+                    <button type="button" class="btn btn-light" style="font-weight: bold; color: red;" @click="$parent.createDialog = false">X</button>
                 </v-card-title>
 
                 <v-card-text>
@@ -38,15 +38,14 @@
                 </v-card-text>
             </v-card>
         </v-dialog>
-        <button type="button" class="btn btn-primary text-light" @click="dialog = true">New Blog</button>
     </div>
 </template>
 <script>
     export default {
-        props: ['posts'],
+        props: ['dialog'],
         data () {
             return {
-                dialog: false, errors: [], post: {
+                errors: [], post: {
                     image: '',
                     title: '',
                     description: '',
@@ -80,8 +79,9 @@
                         'Content-Type' : 'multipart/form-data'
                     }
                 }).then( response => {
-                    // this.posts.push(response.data);
-                    location.href = "";
+                    this.$parent.posts.push(response.data);
+                    this.$parent.createDialog = false
+                    // location.href = "";
                 }).catch( errors => {
                     this.errors = errors.response.data.errors;
                 });

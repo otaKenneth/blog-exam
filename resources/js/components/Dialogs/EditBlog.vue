@@ -13,23 +13,23 @@
                             <img :src="`/storage/${post.image}`" alt="" @click="uploadImg" class="emp_img cursor-pointer" data-toggle="toggle" title="Click to Upload Picture">
                         </div>
                         <div class="d-none">
-                            <input type="file" name="image" id="image" @change="readUrl">
+                            <input type="file" name="image" id="image" @change="readUrl" :disabled="!iscan">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
                             <label for="title" class="font-semibold">Title</label>
-                            <input type="text" name="title" id="title" class="form-control" placeholder="I'm a Title" aria-describedby="helpId" v-model="post.title">
+                            <input type="text" name="title" id="title" class="form-control" placeholder="I'm a Title" aria-describedby="helpId" v-model="post.title" :disabled="!iscan">
                             <small v-if="errors.title" id="helpId" class="text-danger">{{ errors.title[0] }}</small>
                         </div>
 
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="description" id="description" class="form-control" cols="30" rows="10" v-model="post.description"></textarea>
+                            <textarea name="description" id="description" class="form-control" cols="30" rows="10" v-model="post.description" :disabled="!iscan"></textarea>
                             <small v-if="errors.description" id="helpId" class="text-danger">{{ errors.description[0] }}</small>
                         </div>
                         
-                        <div class="d-flex justify-content-end">
+                        <div class="d-flex justify-content-end" v-if="iscan">
                             <button type="button" class="btn btn-primary text-light" @click="updateBlog">Save</button>
                             <button type="button" class="btn btn-danger text-light ml-2" @click="deleteBlog">Delete</button>
                         </div>
@@ -41,7 +41,7 @@
 </template>
 <script>
 export default {
-    props: ['post', 'dialog'],
+    props: ['post', 'dialog', 'iscan'],
     data () {
         return {
             image_update: false,

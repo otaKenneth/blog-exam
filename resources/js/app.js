@@ -28,7 +28,7 @@ Vue.component('home', require('./components/Home.vue').default);
 Vue.component('search-bar', require('./components/SearchBar.vue').default);
 Vue.component('create-blog', require('./components/Dialogs/CreateBlog.vue').default);
 Vue.component('edit-blog', require('./components/Dialogs/EditBlog.vue').default);
-Vue.component('uploads', require('./components/Profile/Uploads.vue').default);
+Vue.component('profile', require('./components/Profile/Profile.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

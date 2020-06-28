@@ -14,7 +14,7 @@
                                     <img :src="(post.user.profile.image == null) ? '/storage/uploads/xqBqzOy3m5Yyf2df3J3Lfx7Ckhs9cS9OxH1j3BaM.png':post.user.profile.image" class="w-100">
                                 </div>
                                 <div class="pt-1 pl-2 font-weight-bold">
-                                    <span v-if="isGuest" class="text-dark">{{ post.user.username }}</span>
+                                    <span v-if="isguest" class="text-dark">{{ post.user.username }}</span>
                                     <a v-else :href="`/profile/${post.user.id}`" class="text-dark">
                                         {{ post.user.username }}
                                     </a>
@@ -31,7 +31,7 @@
         </div>
         <div v-else>
             <div class="row justify-content-center">
-                <h1 v-if="isGuest"><b>Create</b> an account and <b>Add</b> a blog post!</h1>
+                <h1 v-if="isguest"><b>Create</b> an account and <b>Add</b> a blog post!</h1>
                 <h1 v-else><b>Add</b> a blog post now!</h1>
             </div>
         </div>
@@ -39,7 +39,7 @@
 </template>
 <script>
 export default {
-    props: ['isGuest', 'posts'],
+    props: ['isguest', 'posts'],
     data () {
         return {
             
