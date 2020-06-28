@@ -60,7 +60,7 @@
                 <h1 v-if="isguest"><b>Create</b> an account and <b>Add</b> a blog post!</h1>
                 <h1 v-else><b>Add</b> a blog post now!</h1>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <div v-for="(post, key) in posts.slice(2, 6)" :key="key" class="ml-3" style="width: 300px;">
                     <img :src="`/storage/${post.image}`" alt="Image" class="w-100" style="height: 100%">
                     <div class="d-block text-center mt-2">
