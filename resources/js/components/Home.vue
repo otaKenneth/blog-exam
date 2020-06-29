@@ -42,7 +42,7 @@
                             <img class="d-block" style="height: 100%; margin: auto;" :src="`/storage/${post.image}`" alt="First slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>{{ post.title }}</h5>
-                                <p>{{ post.description}}</p>
+                                <p>{{ post.description.substring(0, 12) }}</p>
                             </div>
                         </div>
                     </div>

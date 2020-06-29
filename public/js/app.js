@@ -38641,7 +38641,11 @@ var render = function() {
                             [
                               _c("h5", [_vm._v(_vm._s(post.title))]),
                               _vm._v(" "),
-                              _c("p", [_vm._v(_vm._s(post.description))])
+                              _c("p", [
+                                _vm._v(
+                                  _vm._s(post.description.substring(0, 12))
+                                )
+                              ])
                             ]
                           )
                         ]
