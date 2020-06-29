@@ -40,7 +40,6 @@ class ProfilesController extends Controller
 
     	// dd($data);
 
-
     	if (request('image')) {
     		$imagePath = request('image')->store('uploads','public');
 	    	$data['image'] = $imagePath;

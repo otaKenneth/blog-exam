@@ -1845,7 +1845,7 @@ __webpack_require__.r(__webpack_exports__);
           'Content-Type': 'multipart/form-data'
         }
       }).then(function (response) {
-        _this.$parent.posts.push(response.data);
+        _this.$parent.posts.unshift(response.data);
 
         _this.$parent.createDialog = false; // location.href = "";
       })["catch"](function (errors) {
@@ -1944,7 +1944,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }).then(function (response) {
         // this.posts.push(response.data);
-        location.href = "";
+        _this.$parent.editDialog = false;
       })["catch"](function (errors) {
         _this.errors = errors.response.data.errors;
       });
@@ -1953,7 +1953,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       axios["delete"]("/p/".concat(this.post.id)).then(function (response) {
-        location.href = "";
+        _this2.$parent.posts = response.data;
+        _this2.$parent.editDialog = false;
       })["catch"](function (errors) {
         _this2.errors = errors.response.data.errors;
       });

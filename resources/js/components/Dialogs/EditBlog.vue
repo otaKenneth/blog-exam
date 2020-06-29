@@ -76,14 +76,15 @@ export default {
                 }
             }).then( response => {
                 // this.posts.push(response.data);
-                location.href = "";
+                this.$parent.editDialog = false;
             }).catch( errors => {
                 this.errors = errors.response.data.errors;
             });
         },
         deleteBlog () {
             axios.delete(`/p/${this.post.id}`).then( response => {
-                location.href = "";
+                this.$parent.posts = response.data;
+                this.$parent.editDialog = false;
             }).catch( errors => {
                 this.errors = errors.response.data.errors;
             })

@@ -82,9 +82,10 @@ class PostsController extends Controller
     public function destroy(\App\Post $post)
     {
         $resp = $post->delete();
-
+        
         if ($resp) {
-            return response(['deleted' => true]);
+            $posts = \App\Post::where('user_id', $post->user_id)->latest()->get();
+            return response($posts);
         }
     }
 }

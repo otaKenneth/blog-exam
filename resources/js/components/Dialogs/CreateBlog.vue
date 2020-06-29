@@ -79,7 +79,7 @@
                         'Content-Type' : 'multipart/form-data'
                     }
                 }).then( response => {
-                    this.$parent.posts.push(response.data);
+                    this.$parent.posts.unshift(response.data);
                     this.$parent.createDialog = false
                     // location.href = "";
                 }).catch( errors => {
