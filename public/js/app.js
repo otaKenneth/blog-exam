@@ -1836,6 +1836,7 @@ __webpack_require__.r(__webpack_exports__);
     createBlog: function createBlog() {
       var _this = this;
 
+      // for image uploading
       var formData = new FormData();
       formData.append('image', this.post.image);
       formData.append('title', this.post.title);
@@ -1934,6 +1935,7 @@ __webpack_require__.r(__webpack_exports__);
     updateBlog: function updateBlog() {
       var _this = this;
 
+      // for image uploading
       var formData = new FormData();
       formData.append('image', this.post.image);
       formData.append('title', this.post.title);

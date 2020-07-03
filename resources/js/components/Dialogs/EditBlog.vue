@@ -65,6 +65,7 @@ export default {
             }
         },
         updateBlog () {
+            // for image uploading
             let formData = new FormData();
             formData.append('image', this.post.image);
             formData.append('title', this.post.title);

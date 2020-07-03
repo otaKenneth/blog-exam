@@ -1,7 +1,7 @@
 <template>
     <section>
         <div v-if="$root.search !== ''">
-            <div v-for="post in $root.posts" :key="post.id"  class="row justify-content-center">
+            <div v-for="post in $root.posts" :key="post.id" class="row justify-content-center">
                 <div class="row col-8 mb-3" style="box-shadow: 0 0 1px 0 #e9ebec;">
                     <div class="col-6">
                         <img :src="`/storage/${post.image}`" class="w-100">
