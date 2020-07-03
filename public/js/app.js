@@ -38681,11 +38681,12 @@ var render = function() {
             { staticClass: "row justify-content-center" },
             _vm._l(_vm.posts.slice(2, 6), function(post, key) {
               return _c(
-                "div",
+                "a",
                 {
                   key: key,
                   staticClass: "ml-3",
-                  staticStyle: { width: "300px" }
+                  staticStyle: { width: "300px" },
+                  attrs: { href: "p/" + post.id }
                 },
                 [
                   _c("img", {

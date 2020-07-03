@@ -18,11 +18,6 @@
 						<a href="/profile/{{ $post->user->id }}" class="text-dark">
 							{{ $post->user->username }}
 						</a>
-						{{-- <a href="" class="pl-3">Follow</a> --}}
-					</div>
-					<div class="w-100 text-right">
-						<a class="btn btn-primary" href="{{ url("/p/$post->id/edit") }}">Edit</a>
-						<button class="btn btn-danger">Delete</button>
 					</div>
 				</div>
 				<hr>

@@ -61,13 +61,13 @@
                 <h1 v-else><b>Add</b> a blog post now!</h1>
             </div>
             <div class="row justify-content-center">
-                <div v-for="(post, key) in posts.slice(2, 6)" :key="key" class="ml-3" style="width: 300px;">
+                <a :href="`p/${post.id}`" v-for="(post, key) in posts.slice(2, 6)" :key="key" class="ml-3" style="width: 300px;">
                     <img :src="`/storage/${post.image}`" alt="Image" class="w-100" style="height: 100%">
                     <div class="d-block text-center mt-2">
                         <h5 style="font-weight: bold;">{{ post.title }}</h5>
                         <p>{{ post.description.substring(0, 20) }}</p>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
