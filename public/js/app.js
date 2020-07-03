@@ -2047,6 +2047,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['isguest', 'posts'],
   data: function data() {
@@ -38624,30 +38626,33 @@ var render = function() {
                           staticStyle: { height: "100%" }
                         },
                         [
-                          _c("img", {
-                            staticClass: "d-block",
-                            staticStyle: { height: "100%", margin: "auto" },
-                            attrs: {
-                              src: "/storage/" + post.image,
-                              alt: "First slide"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "carousel-caption d-none d-md-block"
-                            },
-                            [
-                              _c("h5", [_vm._v(_vm._s(post.title))]),
-                              _vm._v(" "),
-                              _c("p", [
-                                _vm._v(
-                                  _vm._s(post.description.substring(0, 12))
-                                )
-                              ])
-                            ]
-                          )
+                          _c("a", { attrs: { href: "p/" + post.id } }, [
+                            _c("img", {
+                              staticClass: "d-block",
+                              staticStyle: { height: "100%", margin: "auto" },
+                              attrs: {
+                                src: "/storage/" + post.image,
+                                alt: "First slide"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "carousel-caption d-none d-md-block"
+                              },
+                              [
+                                _c("h5", [_vm._v(_vm._s(post.title))]),
+                                _vm._v(" "),
+                                _c("p", [
+                                  _vm._v(
+                                    _vm._s(post.description.substring(0, 12))
+                                  )
+                                ])
+                              ]
+                            )
+                          ])
                         ]
                       )
                     }),

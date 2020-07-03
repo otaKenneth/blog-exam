@@ -39,11 +39,13 @@
                     </ol>
                     <div class="carousel-inner" style="height: 100%;">
                         <div v-for="(post, key) in posts.slice(0, 3)" :key="post.id" class="carousel-item bg-dark" :class="key == 0 ? 'active':''" style="height: 100%;"> 
-                            <img class="d-block" style="height: 100%; margin: auto;" :src="`/storage/${post.image}`" alt="First slide">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{ post.title }}</h5>
-                                <p>{{ post.description.substring(0, 12) }}</p>
-                            </div>
+                            <a :href="`p/${post.id}`">
+                                <img class="d-block" style="height: 100%; margin: auto;" :src="`/storage/${post.image}`" alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>{{ post.title }}</h5>
+                                    <p>{{ post.description.substring(0, 12) }}</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
